@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Post</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <span class="logo-line1">Financial · Advisory · Global</span>
+        <span class="logo-line2">WALL STREET INTERNATIONAL</span>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+      <nav>
+        <ul>
+          <li><a href="index.htm" class="nav-link">Home</a></li>
+          <li><a href="about.htm" class="nav-link">About Us</a></li>
+          <li><a href="service.htm" class="nav-link">Services</a></li>
+          <li><a href="contact.htm" class="nav-link">Contact Us</a></li>
+          <li><a href="blog.htm" class="nav-link active">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 id="post-title">Loading...</h1>
+      <p id="post-meta">&nbsp;</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <div id="post-image" style="height:350px;background-size:cover;background-position:center;border-radius:8px;overflow:hidden;margin-bottom:1.5rem"></div>
+      <div id="post-content"></div>
+      <div style="margin-top:2rem"><a href="blog.htm" class="btn">Back to Blog</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="copyright">
+        <p>&copy; 2023 Wall Street International. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Small client-side post dataset
+    const POSTS = {
+      '1': {
+        title: '5 Financial Strategies for Small Business Growth',
+        date: 'May 15, 2023',
+        category: 'Finance',
+        img: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        content: `<p>Small businesses face unique financial challenges. This post outlines five practical strategies...</p>
+                  <p><strong>1.</strong> Improve cash flow management by implementing accurate invoicing and collection practices.</p>
+                  <p><strong>2.</strong> Build a budget and forecast to guide spending and investments.</p>`
+      },
+      '2': {
+        title: 'The Future of Digital Marketing in Financial Services',
+        date: 'April 28, 2023',
+        category: 'Marketing',
+        img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        content: `<p>Digital marketing continues to evolve rapidly in finance. Personalization, data-driven campaigns and compliance-aware automation are key trends.</p>
+                  <p>Learn how to structure a data-driven marketing funnel for financial services.</p>`
+      },
+      '3': {
+        title: 'Essential Steps for Successful Company Formation',
+        date: 'April 12, 2023',
+        category: 'Business',
+        img: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        content: `<p>Forming a company requires careful planning. This guide walks through legal, fiscal and operational steps.</p>
+                  <p>From entity selection to compliance, get practical tips to start strong.</p>`
+      }
+    };
+
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    const id = getQueryParam('post') || '1';
+    const post = POSTS[id];
+    if (post) {
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('post-meta').textContent = `${post.date} • ${post.category}`;
+      document.getElementById('post-image').style.backgroundImage = `url('${post.img}')`;
+      document.getElementById('post-content').innerHTML = post.content;
+    } else {
+      document.getElementById('post-title').textContent = 'Post not found';
+      document.getElementById('post-content').innerHTML = '<p>The requested post could not be found.</p>';
+    }
+  </script>
+</body>
+</html>
