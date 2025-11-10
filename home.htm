@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wall Street International - Financial Services</title>
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
+            <nav>
+                <ul>
+                    <li><a href="home.htm" class="nav-link active">Home</a></li>
+                    <li><a href="about.htm" class="nav-link">About Us</a></li>
+                    <li class="has-submenu">
+                        <a href="service.htm" class="nav-link">Services</a>
+                        <button class="submenu-toggle" aria-expanded="false" aria-label="Toggle services submenu">▾</button>
+                        <ul class="submenu">
+                            <li><a href="service-detail.htm?service=marketing">Marketing</a></li>
+                            <li><a href="service-detail.htm?service=accounting">Accounting &amp; Auditing</a></li>
+                            <li><a href="service-detail.htm?service=pos">POS Systems</a></li>
+                            <li><a href="service-detail.htm?service=account-opening">Account Opening</a></li>
+                            <li><a href="service-detail.htm?service=company-formation">Company Formation</a></li>
+                            <li><a href="service-detail.htm?service=insurance">Insurance</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.htm" class="nav-link">Contact Us</a></li>
+                    <li><a href="blog.htm" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }

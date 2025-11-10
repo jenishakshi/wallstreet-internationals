@@ -7,22 +7,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+    <nav>
     <div class="container header-container">
       <div class="logo">
         <span class="logo-line1">Financial · Advisory · Global</span>
         <span class="logo-line2">WALL STREET INTERNATIONAL</span>
       </div>
       <button class="mobile-menu-btn">☰</button>
-      <nav>
-        <ul>
-          <li><a href="index.htm" class="nav-link">Home</a></li>
-          <li><a href="about.htm" class="nav-link">About Us</a></li>
-          <li><a href="service.htm" class="nav-link">Services</a></li>
-          <li><a href="contact.htm" class="nav-link">Contact Us</a></li>
-          <li><a href="blog.htm" class="nav-link active">Blog</a></li>
-        </ul>
-      </nav>
+      <ul>
+        <li><a href="index.htm" class="nav-link">Home</a></li>
+        <li><a href="about.htm" class="nav-link">About Us</a></li>
+        <li class="has-submenu">
+          <a href="service.htm" class="nav-link">Services</a>
+          <button class="submenu-toggle" aria-expanded="false" aria-label="Toggle services submenu">▾</button>
+          <ul class="submenu">
+            <li><a href="service-detail.htm?service=marketing">Marketing</a></li>
+            <li><a href="service-detail.htm?service=accounting">Accounting &amp; Auditing</a></li>
+            <li><a href="service-detail.htm?service=pos">POS Systems</a></li>
+            <li><a href="service-detail.htm?service=account-opening">Account Opening</a></li>
+            <li><a href="service-detail.htm?service=company-formation">Company Formation</a></li>
+            <li><a href="service-detail.htm?service=insurance">Insurance</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.htm" class="nav-link">Contact Us</a></li>
+        <li><a href="blog.htm" class="nav-link">Blog</a></li>
+      </ul>
+    </div>
+    </nav>
     </div>
   </header>
 

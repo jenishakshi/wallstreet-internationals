@@ -105,6 +105,76 @@ nav ul li a:hover::after, nav ul li a.active::after {
     width: 100%;
 }
 
+/* Submenu (Services) */
+.has-submenu {
+    position: relative;
+}
+
+.has-submenu .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    min-width: 220px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 200;
+}
+
+.has-submenu .submenu li {
+    margin: 0;
+}
+
+.has-submenu .submenu li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.has-submenu .submenu li a:hover {
+    background-color: rgba(255,255,255,0.03);
+    color: var(--secondary);
+}
+
+.has-submenu:hover > .submenu {
+    display: block;
+}
+
+.submenu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 6px;
+}
+
+@media (max-width: 768px) {
+    /* Mobile: submenu stacks inside the vertical nav */
+    .has-submenu .submenu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 1rem;
+    }
+
+    .has-submenu.open .submenu {
+        display: block;
+    }
+
+    .submenu-toggle {
+        display: inline-block;
+    }
+}
+
 .mobile-menu-btn {
     display: none;
     background: none;
